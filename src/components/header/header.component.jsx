@@ -7,7 +7,7 @@ import { ReactComponent as Logo} from '../../assets/crown.svg';
 export default function Header() {
     return (
         <div  className='header'>
-            <Link to="/" >
+            <Link to="/" className="logo-container">
                 <Logo className="logo"></Logo>
             </Link>
             <div className="options">

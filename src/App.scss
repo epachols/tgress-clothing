@@ -1,0 +1,14 @@
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 20px 65px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: all ease-in-out 0.3s;
+
+    &:hover{
+        font-size: 1.2rem;
+    }
+}
