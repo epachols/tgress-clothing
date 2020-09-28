@@ -20,7 +20,7 @@ class App extends Component {
 
   //handling memory leak from unmount & listening for looged in state change
   unsubscribeFromAuth = null;
-  
+
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({currentUser: user})
@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <>
         <Router>
-        <Header></Header>
+        <Header currentUser={this.state.currentUser} />
           <Switch>
             <Route exact path="/">
               <HomePage />
