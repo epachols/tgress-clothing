@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 // component imports
 import CustomButton from "../custom-button/custom-button.component";
@@ -30,4 +31,5 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
 });
 
-export default connect(mapStateToProps)(CartDropdown);
+// wrapping withRouter around to pass match, history, route info into this component. (higher order)
+export default withRouter(connect(mapStateToProps)(CartDropdown));
