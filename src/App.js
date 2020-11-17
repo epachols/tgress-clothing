@@ -4,12 +4,17 @@ import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-import { setCurrentUser } from './redux/user/user.actions'
 
+// redux imports
+import { connect } from "react-redux"; 
+import { setCurrentUser } from './redux/user/user.actions';
+
+// reselect library imports
+import { selectCurrentUser } from './redux/user/user.selectors';
+import { createStructuredSelector } from 'reselect';
 
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import SignInAndUpPage from "./pages/sign-in-and-up/sign-in-and-up.component";
-import { connect } from "react-redux"; 
 
 class App extends Component {
    //handling memory leak from unmount & listening for logged in state change
@@ -62,8 +67,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({ user }) =>({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
