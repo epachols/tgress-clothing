@@ -38,5 +38,5 @@ const mapStateToProps = createStructuredSelector({
 });
 
 
-// wrapping withRouter around to pass match, history, route info into this component. (higher order)
+// wrapping withRouter to pass history, route info into this component
 export default withRouter(connect(mapStateToProps)(CartDropdown));
