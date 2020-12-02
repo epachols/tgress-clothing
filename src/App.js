@@ -60,15 +60,9 @@ class App extends Component {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route path="/shop">
-              <ShopPage />
-            </Route>
-            <Route exact path="/checkout">
-              <CheckoutPage />
-            </Route>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
             <Route
               exact
               path="/signin"
