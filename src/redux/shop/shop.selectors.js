@@ -16,10 +16,15 @@ export const selectCollections = createSelector(
     shop => shop.collections
 )
 
-export const selectCollection = memoize((collectionUrlParam) => 
+export const selectCollectionsForPreview = createSelector(
+    [selectCollections],
+    collections => Object.keys(collections).map(key => collections[key])
+  );
+  
+  export const selectCollection = collectionUrlParam =>
     createSelector(
-        [selectCollections],
-        collections => collections.find(collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam])
-    )
-)
+      [selectCollections],
+      collections => collections[collectionUrlParam]
+    );
+
     // note the increasing specificity in the selector chain, and how it's presented.
