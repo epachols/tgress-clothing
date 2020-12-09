@@ -22,4 +22,4 @@ export const selectCollection = memoize((collectionUrlParam) =>
         collections => collections.find(collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam])
     )
 )
-    // note the increasing specificity in the selector chain, and how it's presented.
+// note the increasing specificity in the selector chain, and how it's presented.
