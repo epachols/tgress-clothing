@@ -8,21 +8,14 @@ import { selectCollection } from "../../redux/shop/shop.selectors";
 import "./collection.styles.scss";
 
 const CollectionPage = ({ collection }) => {
-  // console.log("this idiot is the collection object", collection);
   const { title, items } = collection;
-  console.log("this idiot is the collection title", title);
-  console.log("this idiot is the collection items", items);
   return (
     <div className="collection-page">
       <h2 className='title'>{title}</h2>
       <div className='items'>
-
-      {/* TODO: THIS IS LIKELY THE SOURCE OF ERROR TODO: */}
       {
         items.map(item => <CollectionItem key={item.id} item={item} />)
       }
-
-
       </div>
     </div>
   );
