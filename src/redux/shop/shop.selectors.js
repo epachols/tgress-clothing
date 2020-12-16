@@ -8,10 +8,15 @@ export const selectCollections = createSelector(
   (shop) => shop.collections
 );
 
-export const selectCollection = memoize((collectionUrlParam) =>
-  createSelector(
+export const selectCollectionsForPreview = createSelector(
     [selectCollections],
-    (collections) => collections[collectionUrlParam]
-  )
-);
-// note the increasing specificity in the selector chain, and how it's presented.
+    collections => Object.keys(collections).map(key => collections[key])
+  );
+  
+  export const selectCollection = collectionUrlParam =>
+    createSelector(
+      [selectCollections],
+      collections => collections[collectionUrlParam]
+    );
+
+    // note the increasing specificity in the selector chain, and how it's presented.
