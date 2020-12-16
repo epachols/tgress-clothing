@@ -26,3 +26,6 @@ const StripeCheckoutButton = ({ price }) => {
 };
 
 export default StripeCheckoutButton
+
+// TODO: before final production - note that this is a legacy, if functional integration for modern stripe// Investigate a react-wrapper for better bindings.
+// re-integrate with better/more recent stripe integration, see docs here https://stripe.com/docs/payments/checkout/migration#client-products
